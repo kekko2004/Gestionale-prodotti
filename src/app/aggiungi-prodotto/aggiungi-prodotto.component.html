@@ -1,0 +1,33 @@
+<div class="container ">
+    <h2>{{ titolo }} Prodotto</h2>
+    <div class="col-12 ">
+
+        <form [formGroup]="productForm" (ngSubmit)="submit()" class="d-flex">
+            <div class="col-12 col-md-6 p-2">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" formControlName="nome" class="form-control">
+
+                <label for="descrizione" class="form-label mt-3">Descrizione:</label>
+                <input type="text" formControlName="descrizione" class="form-control">
+            </div>
+
+            <div class="col-12 col-md-6 p-2">
+                <label for="img" class="form-label">Img:</label>
+                <input type="text" formControlName="img" class="form-control">
+
+                <label for="giacienza" class="form-label mt-3">Giacenza:</label>
+                <input type="number" formControlName="giacienza" class="form-control">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary mt-5 " type="submit">{{button}}</button>
+                </div>
+
+            </div>
+        </form>
+
+
+
+    </div>
+</div>
+<div *ngIf="productDetails" class=" col-12 p-2" >
+        <app-prodotto-details [product]="productDetails"></app-prodotto-details>
+      </div>

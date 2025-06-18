@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let prod of products">
+      <mat-card class="example-card h-100" appearance="outlined">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ prod.nome }}</mat-card-title>
+          <mat-card-subtitle>Quantità: {{ prod.giacienza }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/{{ prod.img }}" height="300px" alt="{{ prod.nome }}">
+        <mat-card-content class="p-3 mt-2">
+          <p>{{ prod.descrizione }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button  class="btn btn-outline-danger mx-1" (click)="eliminaProdotto(prod.id)">DELETE</button>
+          <button  class="btn btn-outline-warning mx-1" (click)="aggiornaProdotto(prod)">UPDATE</button>
+          <button  class="btn btn-outline-primary mx-1" (click)="dettagli(prod.id)">INFO</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

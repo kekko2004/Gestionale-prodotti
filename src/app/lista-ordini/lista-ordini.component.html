@@ -1,0 +1,35 @@
+<div class="col-8 offset-2 p-2">
+    <h1 class="text-bold" style="font-size: 40px;">LISTA PRODOTTI</h1>
+    <table class="table table-striped">
+        <thead>
+    <tr>
+      <th>ID</th>
+      <th>Data</th>
+      <th>Indirizzo</th>
+      <th>Stato</th>
+      <th>Telefono</th>
+      <th>Dettagli</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.id }}</td>
+      <td>{{ order.data | date }}</td>
+      <td>{{ order.indirizzo }}</td>
+      <td>
+        <select 
+          [(ngModel)]="order.stato" 
+          (change)="modificaStato(order)"
+          class="form-select"
+        >
+          <option *ngFor="let status of statusOptions" [value]="status">
+            {{ status }}
+          </option>
+        </select>
+      </td>
+      <td>{{order.tell}}</td>
+       <td><button class="btn btn-light" (click)="mostraProdotti( order.id)">prodotti</button></td>
+    </tr>
+  </tbody>
+    </table>
+</div>

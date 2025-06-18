@@ -1,0 +1,10 @@
+<div class="card mb-3 col-4 offset-4">
+  <img src="../../assets/{{product.img}}" class="card-img-top" width="400px" height="500px">
+  <div class="card-body">
+    <h5 class="card-title">{{product.nome}}</h5>
+    <p class="card-text">{{product.descrizione}}</p>
+    <p class="card-text"><small class="text-body-secondary">quantita rimaste: {{product.giacienza}}</small></p>
+     <a routerLink="/form-prodotti/{{product.id}}" class="btn btn-outline-warning  mx-1">MODIFICA</a>
+     <a (click)="elimina(product.id)" class="btn btn-outline-danger mx-1">DELETE</a>
+  </div>
+</div>
